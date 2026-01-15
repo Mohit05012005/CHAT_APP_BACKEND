@@ -4,7 +4,8 @@
   "description": "\"creating a web app for communication based on link\"",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server.js"
   },
   "author": "mohit bohra",
   "license": "ISC",
