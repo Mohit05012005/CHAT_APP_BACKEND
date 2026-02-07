@@ -102,7 +102,12 @@ socket.on("createRoom", (data, callback) => {
 
   socket.on('sendMessage',(data)=>{
     console.log("Message received at server:",data);
-    socket.to(data.roomId).emit("receiveMessage",{name:data.name,message:data.message ,time:new Date()});
+    if(data.name === "askAI"){
+       io.to(data.roomId).emit("receiveMessage",{name:data.name,message:data.message,time:new Date()});
+    }else{
+       socket.to(data.roomId).emit("receiveMessage",{name:data.name,message:data.message ,time:new Date()});
+    }
+
   })
 
 
